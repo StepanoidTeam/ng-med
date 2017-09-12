@@ -1,13 +1,20 @@
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
-import {MdToolbarModule,MdIconModule,MdSidenavModule,MdTableModule} from '@angular/material';
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {
+  MdButtonModule,
+  MdCheckboxModule,
+  MdFormFieldModule,
+  MdIconModule,
+  MdInputModule,
+  MdSidenavModule,
+  MdTableModule,
+  MdToolbarModule
+} from "@angular/material";
 
 
-
-import { AppComponent } from './app.component';
-import { UserListComponent } from './user-list/user-list.component';
+import {AppComponent} from "./app.component";
+import {UserListComponent} from "./user-list/user-list.component";
 
 @NgModule({
   declarations: [
@@ -15,12 +22,13 @@ import { UserListComponent } from './user-list/user-list.component';
     UserListComponent
   ],
   imports: [
-    BrowserModule,NoopAnimationsModule,
+    BrowserModule, NoopAnimationsModule,
     MdButtonModule, MdCheckboxModule,
-    MdToolbarModule,MdIconModule,
-    MdSidenavModule,MdTableModule
+    MdToolbarModule, MdIconModule,
+    MdSidenavModule, MdTableModule, MdFormFieldModule, MdInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
