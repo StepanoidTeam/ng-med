@@ -34,7 +34,7 @@ export class UserListComponent implements OnInit {
       .subscribe(() => {
 
         // if (!this.dataSource) { return; }
-         this.dataSource.filter = this.filter.nativeElement.value;
+         //this.dataSource.filter = this.filter.nativeElement.value;
       });
   }
 
