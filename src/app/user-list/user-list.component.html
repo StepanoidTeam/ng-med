@@ -1,65 +1,65 @@
-
-
-
 <section class="mat-typography">
   <h1>User List</h1>
 
-<div class="example-container mat-elevation-z8">
-  <md-table #table [dataSource]="dataSource">
+  <div class="example-container mat-elevation-z8">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+    <div class="example-header">
+      <md-form-field floatPlaceholder="never">
+        <input mdInput #filter placeholder="Filter users">
+      </md-form-field>
+    </div>
 
-    <!-- Position Column -->
-    <ng-container mdColumnDef="position">
-      <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
-    </ng-container>
+    <md-table #table [dataSource]="dataSource">
 
-    <!-- Name Column -->
-    <ng-container mdColumnDef="name">
-      <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.role}} </md-cell>
-    </ng-container>
+      <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+      <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
 
-    <!-- Weight Column -->
-    <ng-container mdColumnDef="weight">
-      <md-header-cell *mdHeaderCellDef> Weight </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.email}} </md-cell>
-    </ng-container>
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Color Column -->
-    <ng-container mdColumnDef="symbol">
-      <md-header-cell *mdHeaderCellDef> Symbol </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.phone}} </md-cell>
-    </ng-container>
+      <ng-container mdColumnDef="name">
+        <md-header-cell *mdHeaderCellDef>Name</md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.name}}</md-cell>
+      </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container mdColumnDef="weight">
-      <md-header-cell *mdHeaderCellDef> Weight </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.branch}} </md-cell>
-    </ng-container>
+      <ng-container mdColumnDef="role">
+        <md-header-cell *mdHeaderCellDef>Role</md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.role}}</md-cell>
+      </ng-container>
 
-    <!-- Color Column -->
-    <ng-container mdColumnDef="symbol">
-      <md-header-cell *mdHeaderCellDef> Symbol </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.facility}} </md-cell>
-    </ng-container>
+      <ng-container mdColumnDef="email">
+        <md-header-cell *mdHeaderCellDef>email</md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.email}}</md-cell>
+      </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container mdColumnDef="weight">
-      <md-header-cell *mdHeaderCellDef> Weight </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.active}} </md-cell>
-    </ng-container>
+      <ng-container mdColumnDef="phone">
+        <md-header-cell *mdHeaderCellDef>phone</md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.phone}}</md-cell>
+      </ng-container>
 
-    <!-- Color Column -->
-    <ng-container mdColumnDef="symbol">
-      <md-header-cell *mdHeaderCellDef> Symbol </md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.action}} </md-cell>
-    </ng-container>
+      <ng-container mdColumnDef="branch">
+        <md-header-cell *mdHeaderCellDef>branch</md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.branch}}</md-cell>
+      </ng-container>
 
-    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
-  </md-table>
-</div>
+      <ng-container mdColumnDef="facility">
+        <md-header-cell *mdHeaderCellDef>facility</md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.facility}}</md-cell>
+      </ng-container>
+
+      <ng-container mdColumnDef="active">
+        <md-header-cell *mdHeaderCellDef>active</md-header-cell>
+        <md-cell *mdCellDef="let element">
+          <md-checkbox [checked]="element.active"></md-checkbox>
+        </md-cell>
+      </ng-container>
+
+      <ng-container mdColumnDef="action">
+        <md-header-cell *mdHeaderCellDef>action</md-header-cell>
+        <md-cell *mdCellDef="let element"> {{element.action}}</md-cell>
+      </ng-container>
+
+
+    </md-table>
+  </div>
 </section>
