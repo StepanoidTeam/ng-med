@@ -2,9 +2,15 @@
   padding: 0 14px;
 }
 
-.example-spacer {
-  flex: 1 1 auto;
+md-sidenav-container{
+  height: calc(100vh - 64px);
 }
+
+.app-sidenav{
+  width: 250px;
+
+}
+
 .example-container {
   width: 500px;
   height: 300px;
