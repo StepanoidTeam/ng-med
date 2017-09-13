@@ -1,16 +1,13 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {DataSource} from '@angular/cdk/collections';
-import 'rxjs/add/observable/of';
-
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/observable/fromEvent';
-
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
+import {DataSource} from "@angular/cdk/collections";
+import "rxjs/add/observable/of";
+import {Observable} from "rxjs/Observable";
+import "rxjs/add/operator/startWith";
+import "rxjs/add/observable/merge";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/debounceTime";
+import "rxjs/add/operator/distinctUntilChanged";
+import "rxjs/add/observable/fromEvent";
 
 
 @Component({
@@ -20,12 +17,13 @@ import 'rxjs/add/observable/fromEvent';
 })
 export class UserListComponent implements OnInit {
 
-  displayedColumns = ['name', 'role', 'email', 'phone', 'branch', 'facility', 'active', 'action' ];
+  displayedColumns = ['name', 'role', 'email', 'phone', 'branch', 'facility', 'active', 'action'];
   dataSource = new ExampleDataSource();
 
   @ViewChild('filter') filter: ElementRef;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     Observable.fromEvent(this.filter.nativeElement, 'keyup')
@@ -34,7 +32,7 @@ export class UserListComponent implements OnInit {
       .subscribe(() => {
 
         // if (!this.dataSource) { return; }
-         //this.dataSource.filter = this.filter.nativeElement.value;
+        // this.dataSource.filter = this.filter.nativeElement.value;
       });
   }
 
@@ -47,19 +45,90 @@ export interface UserRow {
   branch: string;
   facility: string;
   active: boolean;
-  action: string;
 }
 
 const data: UserRow[] = [
-  {name: 'john smith', role: 'user', email:'K.Smith@gmail.com', phone:'(541)-744-3010', branch:'branch', facility:'facility', active: true, action: 'Deactivate'},
-  {name: 'Angelina Joli', role: 'Sister', email:'Angelina@gmail.com', phone:'(341)-744-3010', branch:'branch', facility:'facility', active: false, action: 'Deactivate'},
-  {name: 'Brad Pit', role: 'Brother', email:'Brad@gmail.com', phone:'(941)-744-3010', branch:'branch', facility:'facility', active: true, action: 'Deactivate'},
-  {name: 'john smith', role: 'user', email:'K.Smith@gmail.com', phone:'(541)-744-3010', branch:'branch', facility:'facility', active: true, action: 'Deactivate'},
-  {name: 'Angelina Joli', role: 'Sister', email:'Angelina@gmail.com', phone:'(341)-744-3010', branch:'branch', facility:'facility', active: false, action: 'Deactivate'},
-  {name: 'Brad Pit', role: 'Brother', email:'Brad@gmail.com', phone:'(941)-744-3010', branch:'branch', facility:'facility', active: true, action: 'Deactivate'},
-  {name: 'john smith', role: 'user', email:'K.Smith@gmail.com', phone:'(541)-744-3010', branch:'branch', facility:'facility', active: true, action: 'Deactivate'},
-  {name: 'Angelina Joli', role: 'Sister', email:'Angelina@gmail.com', phone:'(341)-744-3010', branch:'branch', facility:'facility', active: false, action: 'Deactivate'},
-  {name: 'Brad Pit', role: 'Brother', email:'Brad@gmail.com', phone:'(941)-744-3010', branch:'branch', facility:'facility', active: true, action: 'Deactivate'}
+  {
+    name: 'john smith',
+    role: 'user',
+    email: 'K.Smith@gmail.com',
+    phone: '(541)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: true,
+  },
+  {
+    name: 'Angelina Joli',
+    role: 'Sister',
+    email: 'Angelina@gmail.com',
+    phone: '(341)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: false,
+  },
+  {
+    name: 'Brad Pit',
+    role: 'Brother',
+    email: 'Brad@gmail.com',
+    phone: '(941)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: true,
+  },
+  {
+    name: 'john smith',
+    role: 'user',
+    email: 'K.Smith@gmail.com',
+    phone: '(541)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: true,
+  },
+  {
+    name: 'Angelina Joli',
+    role: 'Sister',
+    email: 'Angelina@gmail.com',
+    phone: '(341)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: false,
+  },
+  {
+    name: 'Brad Pit',
+    role: 'Brother',
+    email: 'Brad@gmail.com',
+    phone: '(941)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: true,
+  },
+  {
+    name: 'john smith',
+    role: 'user',
+    email: 'K.Smith@gmail.com',
+    phone: '(541)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: true,
+  },
+  {
+    name: 'Angelina Joli',
+    role: 'Sister',
+    email: 'Angelina@gmail.com',
+    phone: '(341)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: false,
+  },
+  {
+    name: 'Brad Pit',
+    role: 'Brother',
+    email: 'Brad@gmail.com',
+    phone: '(941)-744-3010',
+    branch: 'branch',
+    facility: 'facility',
+    active: true,
+  }
 ];
 
 /**
@@ -74,5 +143,6 @@ export class ExampleDataSource extends DataSource<any> {
     return Observable.of(data);
   }
 
-  disconnect() {}
+  disconnect() {
+  }
 }
