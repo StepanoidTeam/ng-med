@@ -11,7 +11,7 @@ import {
   MdIconModule,
   MdInputModule,
   MdListModule,
-  MdPaginatorModule,
+  MdPaginatorModule, MdSelectModule,
   MdSidenavModule,
   MdTableModule,
   MdToolbarModule
@@ -21,18 +21,19 @@ import {
 import {AppComponent} from "./app.component";
 import {UserListComponent} from "./user-list/user-list.component";
 import {UserDetailsComponent} from "./user-details/user-details.component";
-import { NotFoundComponent } from './not-found/not-found.component';
+import {NotFoundComponent} from "./not-found/not-found.component";
+import {UnderConstructionComponent} from "./under-construction/under-construction.component";
 
 
 const appRoutes: Routes = [
-  {path: 'dashboard', component: NotFoundComponent}, // todo: dashboard here
+  {path: 'dashboard', component: UnderConstructionComponent}, // todo: dashboard here
 
   {path: 'users', component: UserListComponent},
   {path: 'users/:id', component: UserDetailsComponent}, // todo: add user details
 
-  {path: 'patients', component: NotFoundComponent},
-  {path: 'alerts', component: NotFoundComponent},
-  {path: 'settings', component: NotFoundComponent},
+  {path: 'patients', component: UnderConstructionComponent},
+  {path: 'alerts', component: UnderConstructionComponent},
+  {path: 'settings', component: UnderConstructionComponent},
 
   {
     path: 'users/new',
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
     redirectTo: '/dashboard',
     pathMatch: 'full'
   },
-  // {path: '**', component: PageNotFoundComponent}
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     AppComponent,
     UserListComponent,
     UserDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UnderConstructionComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -62,7 +64,7 @@ const appRoutes: Routes = [
     MdButtonModule, MdCheckboxModule,
     MdToolbarModule, MdIconModule,
     MdSidenavModule, MdTableModule, MdFormFieldModule, MdInputModule,
-    MdCardModule, MdListModule, MdPaginatorModule
+    MdCardModule, MdListModule, MdPaginatorModule, MdSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
