@@ -1,3 +1,83 @@
-<p>
-  user-details works!
-</p>
+<section>
+  <md-card class="user-list-card ">
+    <md-card-header>
+      <h1>User Details</h1>
+    </md-card-header>
+    <md-card-content>
+
+      <form>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="First Name">
+              </md-form-field>
+            </td>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="Last Name">
+              </md-form-field>
+            </td>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="Username">
+              </md-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <md-form-field>
+                <span mdPrefix>+1 &nbsp;</span>
+                <input type="tel" mdInput placeholder="Telephone">
+                <md-icon mdSuffix>local_phone</md-icon>
+              </md-form-field>
+            </td>
+            <td>
+              <md-form-field>
+                <span mdPrefix>+1 &nbsp;</span>
+                <input type="tel" mdInput placeholder="Mobile Phone">
+                <md-icon mdSuffix>smartphone</md-icon>
+              </md-form-field>
+            </td>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="E-Mail">
+                <md-icon mdSuffix>email</md-icon>
+              </md-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+                <md-select placeholder="Branch">
+                  <md-option *ngFor="let item of branches" [value]="item">{{item}}</md-option>
+                </md-select>
+            </td>
+            <td>
+                <md-select placeholder="Facility">
+                  <md-option *ngFor="let item of facilities" [value]="item">{{item}}</md-option>
+                </md-select>
+            </td>
+            <td>
+                <md-select placeholder="Role">
+                  <md-option *ngFor="let item of roles" [value]="item">{{item}}</md-option>
+                </md-select>
+            </td>
+          </tr>
+
+        </table>
+
+      </form>
+
+    </md-card-content>
+    <md-card-actions>
+      <span class="spacer"></span>
+      <button md-button routerLink="/users">Cancel</button>
+      <button md-button class="mat-raised-button mat-primary" routerLink="/users">
+        Save
+      </button>
+    </md-card-actions>
+  </md-card>
+
+</section>
