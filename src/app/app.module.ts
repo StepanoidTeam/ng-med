@@ -8,10 +8,11 @@ import {
   MdCardModule,
   MdCheckboxModule,
   MdFormFieldModule,
+  MdGridListModule,
   MdIconModule,
   MdInputModule,
   MdListModule,
-  MdPaginatorModule,
+  MdPaginatorModule, MdRadioModule,
   MdSelectModule,
   MdSidenavModule,
   MdTableModule,
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     MdButtonModule, MdCheckboxModule,
     MdToolbarModule, MdIconModule,
     MdSidenavModule, MdTableModule, MdFormFieldModule, MdInputModule,
-    MdCardModule, MdListModule, MdPaginatorModule, MdSelectModule
+    MdCardModule, MdListModule, MdPaginatorModule, MdSelectModule, MdGridListModule,
+    MdRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
