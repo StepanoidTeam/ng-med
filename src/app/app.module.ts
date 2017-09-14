@@ -23,6 +23,7 @@ import {UserListComponent} from "./user-list/user-list.component";
 import {UserDetailsComponent} from "./user-details/user-details.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {UnderConstructionComponent} from "./under-construction/under-construction.component";
+import { ProfileComponent } from './profile/profile.component';
 
 
 const appRoutes: Routes = [
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
 
   {path: 'patients', component: UnderConstructionComponent},
   {path: 'alerts', component: UnderConstructionComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: 'settings', component: UnderConstructionComponent},
 
   {
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     UserListComponent,
     UserDetailsComponent,
     NotFoundComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    ProfileComponent
   ],
   imports: [
     RouterModule.forRoot(

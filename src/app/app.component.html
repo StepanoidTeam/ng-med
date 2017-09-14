@@ -8,7 +8,7 @@
   <md-icon class="example-icon">user</md-icon>
 
 
-  <button md-button>
+  <button md-button routerLink="/profile">
     <md-icon  class="md-24 mat-icon material-icons">account_circle</md-icon>
     John Doe
   </button>
@@ -38,6 +38,10 @@
       <md-list-item routerLink="/patients" routerLinkActive="active">
         <md-icon mdListIcon>assignment_ind</md-icon>
         Patients
+      </md-list-item>
+      <md-list-item routerLink="/profile" routerLinkActive="active">
+        <md-icon mdListIcon>account_circle</md-icon>
+        Profile
       </md-list-item>
       <md-list-item routerLink="/settings" routerLinkActive="active">
         <md-icon mdListIcon>settings</md-icon>
