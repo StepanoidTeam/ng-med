@@ -37,6 +37,7 @@ export class UserListComponent implements OnInit {
   }
 
 }
+
 export interface UserRow {
   name: string;
   role: string;
@@ -49,7 +50,7 @@ export interface UserRow {
 
 const data: UserRow[] = [
   {
-    name: 'john smith',
+    name: 'John Smith',
     role: 'Nurse',
     email: 'K.Smith@gmail.com',
     phone: '(541)-744-3010',

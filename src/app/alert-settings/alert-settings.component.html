@@ -1,0 +1,64 @@
+<section>
+
+  <md-card class="user-list-card">
+    <md-card-header>
+      <h1>Alert Settings</h1>
+    </md-card-header>
+
+    <md-form-field floatPlaceholder="never">
+      <input mdInput #filter placeholder="Filter alerts">
+    </md-form-field>
+
+    <md-card-content>
+      <md-table #table [dataSource]="dataSource">
+
+        <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+
+        <ng-container mdColumnDef="fullName">
+          <md-header-cell *mdHeaderCellDef>Full Name</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.fullName}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="providers">
+          <md-header-cell *mdHeaderCellDef>providers</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.providers}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="patientSelector">
+          <md-header-cell *mdHeaderCellDef>patientSelector</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.patientSelector}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="action">
+          <md-header-cell *mdHeaderCellDef></md-header-cell>
+          <md-cell *mdCellDef="let element">
+            <button md-button>
+              <md-icon>mode_edit</md-icon>
+              Edit
+            </button>
+            <button md-button color="warn">
+              <md-icon>delete</md-icon>
+              Remove
+            </button>
+          </md-cell>
+        </ng-container>
+
+      </md-table>
+
+      <md-paginator [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+      </md-paginator>
+
+    </md-card-content>
+    <md-card-actions>
+      <span class="spacer"></span>
+      <button md-button class="mat-raised-button mat-primary" routerLink="/alerts/new">
+        <md-icon>add_alert</md-icon>
+        Add Alert Setting
+      </button>
+    </md-card-actions>
+  </md-card>
+
+</section>
