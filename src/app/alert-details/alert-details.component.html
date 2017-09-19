@@ -5,30 +5,19 @@
       Alert Settings
     </md-card-title>
 
-    <md-card-subtitle>
-      <b>General Section</b>
-    </md-card-subtitle>
-
-
     <md-card-content class="example-full-width">
 
-      <md-grid-list cols="2" rowHeight="3:1">
 
-        <md-grid-tile colspan="1">
           <div class="select">
-            <md-select placeholder="User">
+            <md-select placeholder="Staff">
               <md-option *ngFor="let item of users" [value]="item">
                 {{ item }}
               </md-option>
             </md-select>
           </div>
-        </md-grid-tile>
 
-        <md-grid-tile colspan="1">
 
-        </md-grid-tile>
-
-        <md-grid-tile rowspan="2" class="flex-direction-column">
+      <div class="multicol">
           <div class="select">
             <span>Providers</span>
             <md-selection-list>
@@ -37,9 +26,7 @@
               </md-list-option>
             </md-selection-list>
           </div>
-        </md-grid-tile>
 
-        <md-grid-tile rowspan="2" class="flex-direction-column">
           <div class="select">
             <span>Pendant Event Types</span>
             <md-selection-list>
@@ -48,37 +35,44 @@
               </md-list-option>
             </md-selection-list>
           </div>
-        </md-grid-tile>
+      </div>
 
-        <md-grid-tile rowspan="3">
           <md-radio-group class="fdc">
             <md-radio-button checked="true">All Patient</md-radio-button>
-            <md-radio-button value="1">
+            <md-radio-button value="1" class="multicol">
               <md-select placeholder="Branch">
                 <md-option *ngFor="let item of branches" [value]="item">
                   {{ item }}
                 </md-option>
               </md-select>
-
-            </md-radio-button>
-            <md-radio-button value="2">
               <md-select placeholder="Facility">
                 <md-option *ngFor="let item of facilities" [value]="item">
                   {{ item }}
                 </md-option>
               </md-select>
             </md-radio-button>
-            <md-radio-button value="3">
-                <md-select placeholder="Specific Patient">
-                  <md-option *ngFor="let item of patients" [value]="item">
-                    {{ item }}
-                  </md-option>
-                </md-select>
+
+            <md-radio-button value="2" >
+
+              <div class="multicol">
+              <md-select placeholder="Patient">
+                <md-option *ngFor="let item of selectedPatients" [value]="item">
+                  {{ item }}
+                </md-option>
+              </md-select>
+
+                <md-chip-list #chipList1 class="aic">
+                  <md-chip  *ngFor="let person of patients"
+                            [removable]="true" >
+                    {{person}}
+                    <md-icon mdChipRemove>cancel</md-icon>
+                  </md-chip>
+                </md-chip-list>
+              </div>
+
             </md-radio-button>
           </md-radio-group>
-        </md-grid-tile>
 
-      </md-grid-list>
 
     </md-card-content>
 

@@ -1,41 +1,55 @@
 section {
-  padding: 16px;
+    padding: 16px;
 
-  width: 100%;
+    width: 100%;
 
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
-md-card{
-  width: 600px;
+md-card {
+    width: 600px;
 }
 
 md-card-actions {
-  display: flex;
+    display: flex;
 }
 
 md-form-field {
-  width: 100%;
-}
-
-
-md-select {
-  width: 100%;
+    width: 100%;
 }
 
 .select {
-  width: 100%;
-  align-self: baseline;
-  padding: 16px;
+    width: 100%;
+    align-self: baseline;
+    padding: 16px;
+}
+
+.multicol{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.multicol>*{
+  margin: 0px 10px 0px 0px;
 }
 
 .fdc {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
 }
 
-md-radio-button{
-  margin: 10px;
+md-radio-button {
+    margin: 10px;
+}
+
+.aic{
+  display: flex;
+  align-items: center;
+}
+
+.aic .mat-chip-list-wrapper{
+  align-items: center !important;
 }
