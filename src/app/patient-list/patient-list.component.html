@@ -2,12 +2,22 @@
 
   <md-card class="user-list-card">
     <md-card-header>
-      <h1>Patients</h1>
+      <h1>
+        <md-icon mdListIcon>assignment_ind</md-icon>
+        <span>Patients</span>
+      </h1>
     </md-card-header>
 
-    <md-form-field floatPlaceholder="never">
-      <input mdInput #filter placeholder="Filter users">
-    </md-form-field>
+    <div class="table-head-controls">
+      <md-form-field floatPlaceholder="never">
+        <input mdInput #filter placeholder="Filter staff">
+      </md-form-field>
+      <span class="spacer"></span>
+      <button md-button class="mat-raised-button mat-primary" routerLink="/patients/new">
+        Add Patient
+      </button>
+    </div>
+
 
     <md-card-content>
       <md-table #table [dataSource]="dataSource">
@@ -20,42 +30,52 @@
           <md-cell *mdCellDef="let element"> {{element.name}}</md-cell>
         </ng-container>
 
-        <ng-container mdColumnDef="role">
-          <md-header-cell *mdHeaderCellDef>Role</md-header-cell>
-          <md-cell *mdCellDef="let element"> {{element.role}}</md-cell>
+        <ng-container mdColumnDef="bloodPressure">
+          <md-header-cell *mdHeaderCellDef>Blood Pressure</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.bloodPressure}}</md-cell>
         </ng-container>
 
-        <ng-container mdColumnDef="email">
-          <md-header-cell *mdHeaderCellDef>email</md-header-cell>
-          <md-cell *mdCellDef="let element"> {{element.email}}</md-cell>
+        <ng-container mdColumnDef="heartRate">
+          <md-header-cell *mdHeaderCellDef>Heart Rate</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.heartRate}}</md-cell>
         </ng-container>
 
-        <ng-container mdColumnDef="phone">
-          <md-header-cell *mdHeaderCellDef>phone</md-header-cell>
-          <md-cell *mdCellDef="let element"> {{element.phone}}</md-cell>
+        <ng-container mdColumnDef="weight">
+          <md-header-cell *mdHeaderCellDef>Weight</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.weight}}</md-cell>
         </ng-container>
 
-        <ng-container mdColumnDef="branch">
-          <md-header-cell *mdHeaderCellDef>branch</md-header-cell>
-          <md-cell *mdCellDef="let element"> {{element.branch}}</md-cell>
+        <ng-container mdColumnDef="oxygenLevel">
+          <md-header-cell *mdHeaderCellDef>Oxygen Level</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.oxygenLevel}}</md-cell>
         </ng-container>
 
-        <ng-container mdColumnDef="facility">
-          <md-header-cell *mdHeaderCellDef>facility</md-header-cell>
-          <md-cell *mdCellDef="let element"> {{element.facility}}</md-cell>
+        <ng-container mdColumnDef="lastAlert">
+          <md-header-cell *mdHeaderCellDef>Last Alert</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.lastAlert}}</md-cell>
         </ng-container>
 
-        <ng-container mdColumnDef="active">
-          <md-header-cell *mdHeaderCellDef>active</md-header-cell>
+        <ng-container mdColumnDef="batteryLevel">
+          <md-header-cell *mdHeaderCellDef>Battery Level</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.batteryLevel}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="currentDeviceLocation">
+          <md-header-cell *mdHeaderCellDef>Current Device Location</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.currentDeviceLocation}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="isActive">
+          <md-header-cell *mdHeaderCellDef>Active</md-header-cell>
           <md-cell *mdCellDef="let element">
-            <md-checkbox [checked]="element.active" [disabled]="true"></md-checkbox>
+            <md-checkbox [checked]="element.isActive" [disabled]="true"></md-checkbox>
           </md-cell>
         </ng-container>
 
         <ng-container mdColumnDef="action">
-          <md-header-cell *mdHeaderCellDef>action</md-header-cell>
+          <md-header-cell *mdHeaderCellDef></md-header-cell>
           <md-cell *mdCellDef="let element">
-            <button md-button>{{ element.active?'Activate':'Deactivate' }}</button>
+            <button md-button >{{ element.isActive ?'Activate':'Deactivate' }}</button>
           </md-cell>
         </ng-container>
 
@@ -68,11 +88,7 @@
 
     </md-card-content>
     <md-card-actions>
-      <span class="spacer"></span>
-      <button md-button>Make Report</button>
-      <button md-button class="mat-raised-button mat-primary" routerLink="/users/new">
-        Create User
-      </button>
+
     </md-card-actions>
   </md-card>
 
