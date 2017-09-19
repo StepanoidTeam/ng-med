@@ -1,6 +1,5 @@
 <section>
-  <md-card class="user-list-card ">
-
+  <md-card>
     <md-card-title>
       Profile
     </md-card-title>
@@ -48,22 +47,37 @@
     </md-card-actions>
 
   </md-card>
-  <md-card class="user-list-card ">
+
+  <md-card>
     <md-card-title>
       Security
     </md-card-title>
 
     <md-card-content>
       <form>
-        <md-form-field>
-          <input mdInput type="password" placeholder="Old Password">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput type="password" placeholder="New Password">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput type="password" placeholder="Confirm Password">
-        </md-form-field>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput type="password" placeholder="Old Password">
+              </md-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput type="password" placeholder="New Password">
+              </md-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput type="password" placeholder="Confirm Password">
+              </md-form-field>
+            </td>
+          </tr>
+        </table>
       </form>
     </md-card-content>
 
