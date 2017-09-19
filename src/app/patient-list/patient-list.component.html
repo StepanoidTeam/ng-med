@@ -1,0 +1,79 @@
+<section>
+
+  <md-card class="user-list-card">
+    <md-card-header>
+      <h1>Patients</h1>
+    </md-card-header>
+
+    <md-form-field floatPlaceholder="never">
+      <input mdInput #filter placeholder="Filter users">
+    </md-form-field>
+
+    <md-card-content>
+      <md-table #table [dataSource]="dataSource">
+
+        <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+
+        <ng-container mdColumnDef="name">
+          <md-header-cell *mdHeaderCellDef>Name</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.name}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="role">
+          <md-header-cell *mdHeaderCellDef>Role</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.role}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="email">
+          <md-header-cell *mdHeaderCellDef>email</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.email}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="phone">
+          <md-header-cell *mdHeaderCellDef>phone</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.phone}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="branch">
+          <md-header-cell *mdHeaderCellDef>branch</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.branch}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="facility">
+          <md-header-cell *mdHeaderCellDef>facility</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.facility}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="active">
+          <md-header-cell *mdHeaderCellDef>active</md-header-cell>
+          <md-cell *mdCellDef="let element">
+            <md-checkbox [checked]="element.active" [disabled]="true"></md-checkbox>
+          </md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="action">
+          <md-header-cell *mdHeaderCellDef>action</md-header-cell>
+          <md-cell *mdCellDef="let element">
+            <button md-button>{{ element.active?'Activate':'Deactivate' }}</button>
+          </md-cell>
+        </ng-container>
+
+      </md-table>
+
+      <md-paginator [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+      </md-paginator>
+
+    </md-card-content>
+    <md-card-actions>
+      <span class="spacer"></span>
+      <button md-button>Make Report</button>
+      <button md-button class="mat-raised-button mat-primary" routerLink="/users/new">
+        Create User
+      </button>
+    </md-card-actions>
+  </md-card>
+
+</section>
