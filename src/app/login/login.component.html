@@ -1,0 +1,39 @@
+<section>
+  <md-card>
+    <md-card-title>
+      Login
+    </md-card-title>
+
+    <md-card-content>
+      <form>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="Login">
+              </md-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <md-form-field>
+                <input mdInput type="password" placeholder="Password">
+              </md-form-field>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </md-card-content>
+
+    <md-card-actions>
+      <button md-button class="mat-button" routerLink="/password/reset">
+        Forgot Password
+      </button>
+      <span class="spacer"></span>
+      <button md-button class="mat-raised-button mat-primary" routerLink="/password/change">
+        Log In
+      </button>
+    </md-card-actions>
+
+  </md-card>
+</section>
