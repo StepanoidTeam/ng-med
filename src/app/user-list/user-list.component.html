@@ -2,12 +2,19 @@
 
   <md-card class="user-list-card">
     <md-card-header>
-      <h1>User List</h1>
+      <h1>Staff List</h1>
     </md-card-header>
 
-    <md-form-field floatPlaceholder="never">
-      <input mdInput #filter placeholder="Filter users">
-    </md-form-field>
+    <div class="table-head-controls">
+      <md-form-field floatPlaceholder="never">
+        <input mdInput #filter placeholder="Filter staff">
+      </md-form-field>
+      <span class="spacer"></span>
+      <button md-button class="mat-raised-button mat-primary" routerLink="/users/new">
+        Add Staff
+      </button>
+    </div>
+
 
     <md-card-content>
       <md-table #table [dataSource]="dataSource">
@@ -26,34 +33,34 @@
         </ng-container>
 
         <ng-container mdColumnDef="email">
-          <md-header-cell *mdHeaderCellDef>email</md-header-cell>
+          <md-header-cell *mdHeaderCellDef>E-Mail</md-header-cell>
           <md-cell *mdCellDef="let element"> {{element.email}}</md-cell>
         </ng-container>
 
         <ng-container mdColumnDef="phone">
-          <md-header-cell *mdHeaderCellDef>phone</md-header-cell>
+          <md-header-cell *mdHeaderCellDef>Phone</md-header-cell>
           <md-cell *mdCellDef="let element"> {{element.phone}}</md-cell>
         </ng-container>
 
         <ng-container mdColumnDef="branch">
-          <md-header-cell *mdHeaderCellDef>branch</md-header-cell>
+          <md-header-cell *mdHeaderCellDef>Branch</md-header-cell>
           <md-cell *mdCellDef="let element"> {{element.branch}}</md-cell>
         </ng-container>
 
         <ng-container mdColumnDef="facility">
-          <md-header-cell *mdHeaderCellDef>facility</md-header-cell>
+          <md-header-cell *mdHeaderCellDef>Facility</md-header-cell>
           <md-cell *mdCellDef="let element"> {{element.facility}}</md-cell>
         </ng-container>
 
         <ng-container mdColumnDef="active">
-          <md-header-cell *mdHeaderCellDef>active</md-header-cell>
+          <md-header-cell *mdHeaderCellDef>Active</md-header-cell>
           <md-cell *mdCellDef="let element">
             <md-checkbox [checked]="element.active" [disabled]="true"></md-checkbox>
           </md-cell>
         </ng-container>
 
         <ng-container mdColumnDef="action">
-          <md-header-cell *mdHeaderCellDef>action</md-header-cell>
+          <md-header-cell *mdHeaderCellDef></md-header-cell>
           <md-cell *mdCellDef="let element">
             <button md-button>{{ element.active?'Activate':'Deactivate' }}</button>
           </md-cell>
@@ -68,11 +75,7 @@
 
     </md-card-content>
     <md-card-actions>
-      <span class="spacer"></span>
-      <button md-button>Make Report</button>
-      <button md-button class="mat-raised-button mat-primary" routerLink="/users/new">
-        Create User
-      </button>
+
     </md-card-actions>
   </md-card>
 
