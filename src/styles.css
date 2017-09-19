@@ -9,3 +9,34 @@ body {
 .spacer {
   flex: 1 1 auto;
 }
+
+h1{
+  display: flex;
+  align-items: center;
+}
+
+md-card{
+  margin:16px;
+}
+
+md-card > md-card-actions{
+  display: flex !important;
+}
+
+md-cell{
+  display: flex;
+}
+
+.table-head-controls{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex{
+  display: flex;
+}
+
+.col-6{
+  flex: 1 1 auto;
+}

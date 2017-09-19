@@ -14,7 +14,6 @@ section {
 }
 
 md-card{
-  margin: 16px;
   width: fit-content;
 }
 
@@ -24,10 +23,6 @@ form{
 
 td{
   padding: 10px;
-}
-
-md-card-actions {
-  display: flex;
 }
 
 md-form-field{
