@@ -5,11 +5,6 @@
       Profile
     </md-card-title>
 
-    <md-card-subtitle>
-      <b>General Section</b>
-    </md-card-subtitle>
-
-
     <md-card-content>
       <form>
         <table class="example-full-width" cellspacing="0">
@@ -45,39 +40,37 @@
       </form>
     </md-card-content>
 
-    <md-card-subtitle>
-      <b>Security Section</b>
-    </md-card-subtitle>
+    <md-card-actions>
+      <span class="spacer"></span>
+      <button md-button class="mat-raised-button mat-primary" routerLink="/">
+        Update
+      </button>
+    </md-card-actions>
+
+  </md-card>
+  <md-card class="user-list-card ">
+    <md-card-title>
+      Security
+    </md-card-title>
 
     <md-card-content>
       <form>
-        <table class="example-full-width" cellspacing="0">
-          <tr>
-            <td>
-              <md-form-field>
-                <input mdInput placeholder="Old Password">
-              </md-form-field>
-            </td>
-            <td>
-              <md-form-field>
-                <input mdInput placeholder="New Password">
-              </md-form-field>
-            </td>
-            <td>
-              <md-form-field>
-                <input mdInput placeholder="Confirm Password">
-              </md-form-field>
-            </td>
-          </tr>
-        </table>
+        <md-form-field>
+          <input mdInput type="password" placeholder="Old Password">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput type="password" placeholder="New Password">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput type="password" placeholder="Confirm Password">
+        </md-form-field>
       </form>
     </md-card-content>
 
     <md-card-actions>
       <span class="spacer"></span>
-      <button md-button routerLink="/">Cancel</button>
       <button md-button class="mat-raised-button mat-primary" routerLink="/">
-        Save
+        Change password
       </button>
     </md-card-actions>
 
