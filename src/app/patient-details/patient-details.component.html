@@ -1,3 +1,15 @@
-<p>
-  patient-details works!
-</p>
+<md-tab-group>
+  <md-tab label="Patient Details" routerLink="/patients/new" routerLinkActive="active">
+    <app-patient-list></app-patient-list>
+  </md-tab>
+  <md-tab label="Pendant" routerLink="/patients/123/pendant" routerLinkActive="active">
+    <app-patient-pendant></app-patient-pendant>
+  </md-tab>
+  <md-tab label="History" routerLink="/patients/123/history" routerLinkActive="active">
+    <app-patient-history></app-patient-history>
+  </md-tab>
+  <md-tab label="Family" routerLink="/patients/123/family" routerLinkActive="active">
+    <app-patient-family></app-patient-family>
+  </md-tab>
+
+</md-tab-group>

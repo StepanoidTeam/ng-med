@@ -1,7 +1,7 @@
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 import {
   MdButtonModule,
@@ -17,24 +17,27 @@ import {
   MdRadioModule,
   MdSelectModule,
   MdSidenavModule,
-  MdTableModule,
+  MdTableModule, MdTabsModule,
   MdToolbarModule
-} from "@angular/material";
+} from '@angular/material';
 
-import {AppComponent} from "./app.component";
-import {UserListComponent} from "./user-list/user-list.component";
-import {UserDetailsComponent} from "./user-details/user-details.component";
-import {NotFoundComponent} from "./not-found/not-found.component";
-import {UnderConstructionComponent} from "./under-construction/under-construction.component";
-import {ProfileComponent} from "./profile/profile.component";
-import {AlertSettingsComponent} from "./alert-settings/alert-settings.component";
-import {AlertDetailsComponent} from "./alert-details/alert-details.component";
-import {PatientListComponent} from "./patient-list/patient-list.component";
-import {PatientDetailsComponent} from "./patient-details/patient-details.component";
-import {FormsModule} from "@angular/forms";
-import {LoginComponent} from "./login/login.component";
+import {AppComponent} from './app.component';
+import {UserListComponent} from './user-list/user-list.component';
+import {UserDetailsComponent} from './user-details/user-details.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {UnderConstructionComponent} from './under-construction/under-construction.component';
+import {ProfileComponent} from './profile/profile.component';
+import {AlertSettingsComponent} from './alert-settings/alert-settings.component';
+import {AlertDetailsComponent} from './alert-details/alert-details.component';
+import {PatientListComponent} from './patient-list/patient-list.component';
+import {PatientDetailsComponent} from './patient-details/patient-details.component';
+import {FormsModule} from '@angular/forms';
+import {LoginComponent} from './login/login.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { PasswordChangeComponent } from './password-change/password-change.component';
+import { PatientFamilyComponent } from './patient-family/patient-family.component';
+import { PatientPendantComponent } from './patient-pendant/patient-pendant.component';
+import { PatientHistoryComponent } from './patient-history/patient-history.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: PatientListComponent},
@@ -46,6 +49,9 @@ const appRoutes: Routes = [
   {path: 'patients', component: PatientListComponent},
   {path: 'patients/new', component: PatientDetailsComponent},
   {path: 'patients/:id', component: PatientDetailsComponent},
+  {path: 'patients/:id/history', component: PatientHistoryComponent},
+  {path: 'patients/:id/pendant', component: PatientPendantComponent},
+  {path: 'patients/:id/family', component: PatientFamilyComponent},
 
   {path: 'alerts', component: AlertSettingsComponent},
   {path: 'alerts/new', component: AlertDetailsComponent},
@@ -81,6 +87,9 @@ const appRoutes: Routes = [
     LoginComponent,
     PasswordResetComponent,
     PasswordChangeComponent,
+    PatientFamilyComponent,
+    PatientPendantComponent,
+    PatientHistoryComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -104,6 +113,7 @@ const appRoutes: Routes = [
     MdGridListModule,
     MdRadioModule,
     MdChipsModule,
+    MdTabsModule,
     FormsModule,
   ],
   providers: [],
