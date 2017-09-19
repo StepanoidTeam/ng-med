@@ -22,3 +22,8 @@ md-card-actions {
 md-select{
   width: 100%;
 }
+
+.form-field{
+  vertical-align: top;
+  padding-top: 3px;
+}

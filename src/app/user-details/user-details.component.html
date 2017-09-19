@@ -1,7 +1,7 @@
 <section>
   <md-card class="user-list-card ">
     <md-card-header>
-      <h1>User Details</h1>
+      <h1>Staff Details</h1>
     </md-card-header>
     <md-card-content>
 
@@ -35,34 +35,26 @@
             </td>
             <td>
               <md-form-field>
-                <span mdPrefix>+1 &nbsp;</span>
-                <input type="tel" mdInput placeholder="Mobile Phone">
-                <md-icon mdSuffix>smartphone</md-icon>
-              </md-form-field>
-            </td>
-            <td>
-              <md-form-field>
                 <input mdInput placeholder="E-Mail">
                 <md-icon mdSuffix>email</md-icon>
               </md-form-field>
             </td>
+            <td class="form-field">
+              <md-select placeholder="Role">
+                <md-option *ngFor="let item of roles" [value]="item">{{item}}</md-option>
+              </md-select>
+            </td>
           </tr>
-
           <tr>
             <td>
-                <md-select placeholder="Branch">
-                  <md-option *ngFor="let item of branches" [value]="item">{{item}}</md-option>
-                </md-select>
+              <md-select placeholder="Branch">
+                <md-option *ngFor="let item of branches" [value]="item">{{item}}</md-option>
+              </md-select>
             </td>
             <td>
-                <md-select placeholder="Facility">
-                  <md-option *ngFor="let item of facilities" [value]="item">{{item}}</md-option>
-                </md-select>
-            </td>
-            <td>
-                <md-select placeholder="Role">
-                  <md-option *ngFor="let item of roles" [value]="item">{{item}}</md-option>
-                </md-select>
+              <md-select placeholder="Facility">
+                <md-option *ngFor="let item of facilities" [value]="item">{{item}}</md-option>
+              </md-select>
             </td>
           </tr>
 
