@@ -17,7 +17,8 @@ import {
   MdRadioModule,
   MdSelectModule,
   MdSidenavModule,
-  MdTableModule, MdTabsModule,
+  MdTableModule,
+  MdTabsModule,
   MdToolbarModule
 } from '@angular/material';
 
@@ -33,11 +34,12 @@ import {PatientListComponent} from './patient-list/patient-list.component';
 import {PatientDetailsComponent} from './patient-details/patient-details.component';
 import {FormsModule} from '@angular/forms';
 import {LoginComponent} from './login/login.component';
-import { PasswordResetComponent } from './password-reset/password-reset.component';
-import { PasswordChangeComponent } from './password-change/password-change.component';
-import { PatientFamilyComponent } from './patient-family/patient-family.component';
-import { PatientPendantComponent } from './patient-pendant/patient-pendant.component';
-import { PatientHistoryComponent } from './patient-history/patient-history.component';
+import {PasswordResetComponent} from './password-reset/password-reset.component';
+import {PasswordChangeComponent} from './password-change/password-change.component';
+import {PatientFamilyComponent} from './patient-details/patient-family/patient-family.component';
+import {PatientPendantComponent} from './patient-details/patient-pendant/patient-pendant.component';
+import {PatientHistoryComponent} from './patient-details/patient-history/patient-history.component';
+import {PatientGeneralComponent} from './patient-details/patient-general/patient-general.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: PatientListComponent},
@@ -48,10 +50,16 @@ const appRoutes: Routes = [
 
   {path: 'patients', component: PatientListComponent},
   {path: 'patients/new', component: PatientDetailsComponent},
-  {path: 'patients/:id', component: PatientDetailsComponent},
-  {path: 'patients/:id/history', component: PatientHistoryComponent},
-  {path: 'patients/:id/pendant', component: PatientPendantComponent},
-  {path: 'patients/:id/family', component: PatientFamilyComponent},
+  {
+    path: 'patients/:id', component: PatientDetailsComponent,
+    children: [
+      {path: '', redirectTo: 'general', pathMatch: 'full'},
+      {path: 'general', component: PatientGeneralComponent},
+      {path: 'history', component: PatientHistoryComponent},
+      {path: 'pendant', component: PatientPendantComponent},
+      {path: 'family', component: PatientFamilyComponent},
+    ]
+  },
 
   {path: 'alerts', component: AlertSettingsComponent},
   {path: 'alerts/new', component: AlertDetailsComponent},
@@ -90,6 +98,7 @@ const appRoutes: Routes = [
     PatientFamilyComponent,
     PatientPendantComponent,
     PatientHistoryComponent,
+    PatientGeneralComponent,
   ],
   imports: [
     RouterModule.forRoot(

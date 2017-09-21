@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
+
+interface NavTab {
+  label: string;
+  link: string;
+}
 
 @Component({
   selector: 'app-patient-details',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientDetailsComponent implements OnInit {
 
-  constructor() { }
+
+  navTabs: NavTab[] = [
+    {
+      label: 'General Info',
+      link: 'general',
+    },
+    {
+      label: 'Pendant',
+      link: 'pendant',
+    },
+    {
+      label: 'History',
+      link: 'history',
+    },
+    {
+      label: 'Family',
+      link: 'family',
+    }];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
 
 }
