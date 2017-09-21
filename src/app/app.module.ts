@@ -40,6 +40,7 @@ import {PatientFamilyComponent} from './patient-details/patient-family/patient-f
 import {PatientPendantComponent} from './patient-details/patient-pendant/patient-pendant.component';
 import {PatientHistoryComponent} from './patient-details/patient-history/patient-history.component';
 import {PatientGeneralComponent} from './patient-details/patient-general/patient-general.component';
+import { PatientNewComponent } from './patient-new/patient-new.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: PatientListComponent},
@@ -99,6 +100,7 @@ const appRoutes: Routes = [
     PatientPendantComponent,
     PatientHistoryComponent,
     PatientGeneralComponent,
+    PatientNewComponent,
   ],
   imports: [
     RouterModule.forRoot(
