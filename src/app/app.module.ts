@@ -7,12 +7,12 @@ import {
   MdButtonModule,
   MdCardModule,
   MdCheckboxModule,
-  MdChipsModule,
+  MdChipsModule, MdDatepickerModule,
   MdFormFieldModule,
   MdGridListModule,
   MdIconModule,
   MdInputModule,
-  MdListModule,
+  MdListModule, MdNativeDateModule,
   MdPaginatorModule,
   MdRadioModule,
   MdSelectModule,
@@ -23,24 +23,24 @@ import {
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
-import {UserListComponent} from './user-list/user-list.component';
-import {UserDetailsComponent} from './user-details/user-details.component';
+import {UserListComponent} from './user/user-list/user-list.component';
+import {UserDetailsComponent} from './user/user-details/user-details.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {UnderConstructionComponent} from './under-construction/under-construction.component';
-import {ProfileComponent} from './profile/profile.component';
-import {AlertSettingsComponent} from './alert-settings/alert-settings.component';
-import {AlertDetailsComponent} from './alert-details/alert-details.component';
-import {PatientListComponent} from './patient-list/patient-list.component';
-import {PatientDetailsComponent} from './patient-details/patient-details.component';
+import {ProfileComponent} from './auth/profile/profile.component';
+import {AlertSettingsComponent} from './alert/alert-settings/alert-settings.component';
+import {AlertDetailsComponent} from './alert/alert-details/alert-details.component';
+import {PatientListComponent} from './patient/patient-list/patient-list.component';
 import {FormsModule} from '@angular/forms';
-import {LoginComponent} from './login/login.component';
-import {PasswordResetComponent} from './password-reset/password-reset.component';
-import {PasswordChangeComponent} from './password-change/password-change.component';
-import {PatientFamilyComponent} from './patient-details/patient-family/patient-family.component';
-import {PatientPendantComponent} from './patient-details/patient-pendant/patient-pendant.component';
-import {PatientHistoryComponent} from './patient-details/patient-history/patient-history.component';
-import {PatientGeneralComponent} from './patient-details/patient-general/patient-general.component';
-import { PatientNewComponent } from './patient-new/patient-new.component';
+import {LoginComponent} from './auth/login/login.component';
+import {PasswordResetComponent} from './auth/password-reset/password-reset.component';
+import {PasswordChangeComponent} from './auth/password-change/password-change.component';
+import {PatientFamilyComponent} from './patient/patient-family/patient-family.component';
+import {PatientPendantComponent} from './patient/patient-pendant/patient-pendant.component';
+import {PatientHistoryComponent} from './patient/patient-history/patient-history.component';
+import {PatientGeneralComponent} from './patient/patient-general/patient-general.component';
+import {PatientNewComponent} from './patient/patient-new/patient-new.component';
+import {PatientEditComponent} from './patient/patient-edit/patient-edit.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: PatientListComponent},
@@ -50,15 +50,24 @@ const appRoutes: Routes = [
   {path: 'users/:id', component: UserDetailsComponent},
 
   {path: 'patients', component: PatientListComponent},
-  {path: 'patients/new', component: PatientDetailsComponent},
   {
-    path: 'patients/:id', component: PatientDetailsComponent,
+    path: 'patients/new', component: PatientNewComponent,
+    data: { mode: 'new' },
     children: [
+      {path: 'general', component: PatientGeneralComponent},
+      {path: 'family', component: PatientFamilyComponent},
       {path: '', redirectTo: 'general', pathMatch: 'full'},
+    ]
+  },
+  {
+    path: 'patients/:id', component: PatientEditComponent,
+    data: { mode: 'edit' },
+    children: [
       {path: 'general', component: PatientGeneralComponent},
       {path: 'history', component: PatientHistoryComponent},
       {path: 'pendant', component: PatientPendantComponent},
       {path: 'family', component: PatientFamilyComponent},
+      {path: '', redirectTo: 'general', pathMatch: 'full'},
     ]
   },
 
@@ -92,7 +101,6 @@ const appRoutes: Routes = [
     AlertSettingsComponent,
     AlertDetailsComponent,
     PatientListComponent,
-    PatientDetailsComponent,
     LoginComponent,
     PasswordResetComponent,
     PasswordChangeComponent,
@@ -101,6 +109,7 @@ const appRoutes: Routes = [
     PatientHistoryComponent,
     PatientGeneralComponent,
     PatientNewComponent,
+    PatientEditComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -126,6 +135,8 @@ const appRoutes: Routes = [
     MdChipsModule,
     MdTabsModule,
     FormsModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
