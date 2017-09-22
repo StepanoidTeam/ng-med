@@ -41,6 +41,7 @@ import {PatientHistoryComponent} from './patient/patient-history/patient-history
 import {PatientGeneralComponent} from './patient/patient-general/patient-general.component';
 import {PatientNewComponent} from './patient/patient-new/patient-new.component';
 import {PatientEditComponent} from './patient/patient-edit/patient-edit.component';
+import { PatientFamilyMemberComponent } from './patient/patient-family-member/patient-family-member.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: PatientListComponent},
@@ -110,11 +111,13 @@ const appRoutes: Routes = [
     PatientGeneralComponent,
     PatientNewComponent,
     PatientEditComponent,
+    PatientFamilyMemberComponent,
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only
+
     ),
     BrowserModule,
     NoopAnimationsModule,
@@ -137,6 +140,9 @@ const appRoutes: Routes = [
     FormsModule,
     MdDatepickerModule,
     MdNativeDateModule,
+  ],
+  entryComponents: [
+    PatientFamilyMemberComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

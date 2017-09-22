@@ -1,0 +1,45 @@
+<h1>General Info</h1>
+
+
+<div class="flex-row">
+  <md-select placeholder="Relation">
+    <md-option *ngFor="let item of relations" [value]="item">{{item}}</md-option>
+  </md-select>
+  <md-form-field>
+    <input mdInput placeholder="Username">
+  </md-form-field>
+</div>
+
+<div class="flex-row">
+  <md-form-field>
+    <input mdInput placeholder="First Name">
+  </md-form-field>
+  <md-form-field>
+    <input mdInput placeholder="Last Name">
+  </md-form-field>
+</div>
+<div class="flex-row">
+  <md-form-field>
+    <input mdInput placeholder="Address">
+  </md-form-field>
+</div>
+<div class="flex-row">
+  <md-form-field>
+    <span mdPrefix>+1 &nbsp;</span>
+    <input type="tel" mdInput placeholder="Telephone">
+    <md-icon mdSuffix>local_phone</md-icon>
+  </md-form-field>
+  <md-form-field>
+    <input mdInput placeholder="E-Mail">
+    <md-icon mdSuffix>email</md-icon>
+  </md-form-field>
+</div>
+
+<div class="flex-row">
+  <span class="spacer"></span>
+  <span class="spacer"></span>
+  <button md-button (click)="onClick()">Cancel</button>
+  <button md-button (click)="onClick()" class="mat-raised-button mat-primary">
+    Add
+  </button>
+</div>

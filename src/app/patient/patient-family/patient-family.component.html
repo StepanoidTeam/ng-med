@@ -1,3 +1,70 @@
-<p>
-  patient-family works!
-</p>
+<section>
+
+  <md-card class="user-list-card">
+    <md-card-header>
+      <h1>
+        <span>Family</span>
+      </h1>
+    </md-card-header>
+
+    <div class="table-head-controls">
+      <md-form-field floatPlaceholder="never">
+        <input mdInput #filter placeholder="Filter">
+      </md-form-field>
+      <span class="spacer"></span>
+      <button md-button class="mat-raised-button mat-primary" (click)="openDialog()">
+        Add Family Member
+      </button>
+    </div>
+
+
+    <md-card-content>
+      <md-table #table [dataSource]="dataSource">
+
+        <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+
+        <ng-container mdColumnDef="name">
+          <md-header-cell *mdHeaderCellDef>Full Name</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.name}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="relation">
+          <md-header-cell *mdHeaderCellDef>Relation</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.relation}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="email">
+          <md-header-cell *mdHeaderCellDef>E-Mail</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.email}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="phone">
+          <md-header-cell *mdHeaderCellDef>Phone</md-header-cell>
+          <md-cell *mdCellDef="let element"> {{element.phone}}</md-cell>
+        </ng-container>
+
+        <ng-container mdColumnDef="action">
+          <md-header-cell *mdHeaderCellDef></md-header-cell>
+          <md-cell *mdCellDef="let element">
+            <div class="spacer"></div>
+            <button md-icon-button>
+              <md-icon>delete</md-icon>
+            </button>
+          </md-cell>
+        </ng-container>
+
+      </md-table>
+
+      <md-paginator [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+      </md-paginator>
+
+    </md-card-content>
+    <md-card-actions>
+
+    </md-card-actions>
+  </md-card>
+
+</section>
