@@ -49,6 +49,15 @@ md-cell {
   padding: 10px;
 }
 
+.flex-row > .x2{
+  flex: 2 2 400px;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
 .col-6 {
   flex: 1 1 auto;
   padding: 10px;

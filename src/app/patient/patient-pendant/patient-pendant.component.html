@@ -1,3 +1,62 @@
-<p>
-  patient-pendant works!
-</p>
+<section class="flex-row" style="align-items: stretch;">
+
+  <md-card class="user-list-card x2 flex-col" style="display: flex;">
+    <md-card-header>
+      <h1>
+        <span>Facility Map</span>
+      </h1>
+    </md-card-header>
+
+    <md-card-content style="flex: 1 1">
+
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+              src="http://www.openstreetmap.org/export/embed.html?bbox=-68.14720630645753%2C-38.81600398604759%2C-68.090558052063%2C-38.78607064900987&amp;layer=mapnik"
+              style="border: 1px solid black"></iframe>
+
+    </md-card-content>
+  </md-card>
+
+  <div>
+
+    <md-card class="user-list-card">
+      <h2>Battery level: 50%</h2>
+    </md-card>
+
+    <md-card class="user-list-card">
+      <md-card-header>
+        <h1>
+          <span>Alerts History</span>
+        </h1>
+      </md-card-header>
+
+      <md-card-content>
+        <md-table #table [dataSource]="dataSource">
+
+          <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+          <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+
+          <ng-container mdColumnDef="date">
+            <md-header-cell *mdHeaderCellDef>Date Time</md-header-cell>
+            <md-cell *mdCellDef="let element"> {{element.date | date:'MM/dd/yyyy hh:mm:ss'}}</md-cell>
+          </ng-container>
+
+          <ng-container mdColumnDef="location">
+            <md-header-cell *mdHeaderCellDef>Location</md-header-cell>
+            <md-cell *mdCellDef="let element"> {{element.location}}</md-cell>
+          </ng-container>
+
+        </md-table>
+
+        <md-paginator [length]="100"
+                      [pageSize]="10"
+                      [pageSizeOptions]="[5, 10, 25, 100]">
+        </md-paginator>
+
+      </md-card-content>
+      <md-card-actions>
+
+      </md-card-actions>
+    </md-card>
+  </div>
+
+</section>
