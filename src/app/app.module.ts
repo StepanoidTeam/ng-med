@@ -13,7 +13,7 @@ import {
   MdIconModule,
   MdInputModule,
   MdListModule, MdNativeDateModule,
-  MdPaginatorModule,
+  MdPaginatorModule, MdProgressBarModule,
   MdRadioModule,
   MdSelectModule,
   MdSidenavModule,
@@ -140,6 +140,7 @@ const appRoutes: Routes = [
     FormsModule,
     MdDatepickerModule,
     MdNativeDateModule,
+    MdProgressBarModule,
   ],
   entryComponents: [
     PatientFamilyMemberComponent

@@ -7,7 +7,7 @@
       </h1>
     </md-card-header>
 
-    <md-card-content style="flex: 1 1">
+    <md-card-content style="height: 100%">
 
       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
               src="http://www.openstreetmap.org/export/embed.html?bbox=-68.14720630645753%2C-38.81600398604759%2C-68.090558052063%2C-38.78607064900987&amp;layer=mapnik"
@@ -19,7 +19,12 @@
   <div>
 
     <md-card class="user-list-card">
-      <h2>Battery level: 50%</h2>
+      <h2>Battery level: {{batteryLevel}}%</h2>
+      <md-progress-bar
+        [color]="batteryColor"
+        mode="determinate"
+        [value]="batteryLevel">
+      </md-progress-bar>
     </md-card>
 
     <md-card class="user-list-card">

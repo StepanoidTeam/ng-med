@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {DataSource} from '@angular/cdk/collections';
 
@@ -13,7 +13,20 @@ export class PatientPendantComponent implements OnInit {
     'date', 'location'];
   dataSource = new ExampleDataSource();
 
+  batteryLevel = 100;
+
+  get batteryColor() {
+    return this.batteryLevel > 40 ? 'primary' : 'warn';
+  }
+
   constructor() {
+
+    setInterval(() => {
+      this.batteryLevel -= 10;
+      if (this.batteryLevel < 10) {
+        this.batteryLevel = 100;
+      }
+    }, 700);
 
   }
 
