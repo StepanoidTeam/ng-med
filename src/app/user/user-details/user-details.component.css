@@ -1,0 +1,27 @@
+section {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+td{
+  padding: 10px;
+}
+
+md-card-actions {
+  display: flex;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+md-select{
+  width: 100%;
+}
+
+.form-field{
+  vertical-align: top;
+  padding-top: 3px;
+}
