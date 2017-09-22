@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-patient-general',
@@ -6,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./patient-general.component.css']
 })
 export class PatientGeneralComponent implements OnInit {
+
+  systems = ['Care-101', 'TriCell', 'BioLab', 'Umbrella'];
 
   branches = ['aetiology', 'bioengineering', 'biomedicine', 'biomedicine', 'cardiology', 'chiropody',
     'cytology', 'dentistry', 'dietetics', 'embryology', 'ENT', 'epidemiology', 'general practice', 'genetics',
@@ -47,7 +50,23 @@ export class PatientGeneralComponent implements OnInit {
     'Cardiothoracic surgeon', 'Cardiac Surgeon', 'Hepatic Biliary Pancreatic Surgeon', 'Neurosurgeon',
     'Podiatric Surgeon', 'Urologist'];
 
+  showHistory = false;
+  saveButton = {link: '', label: ''};
+
+  constructor(private route: ActivatedRoute) {
+  }
+
   ngOnInit(): void {
+    this.route.parent.data.subscribe(val => {
+      if (val['mode'] === 'edit') {
+        this.showHistory = true;
+        this.saveButton.link = '/patients';
+        this.saveButton.label = 'Update';
+      } else {
+        this.saveButton.link = '/patients/123';
+        this.saveButton.label = 'Add';
+      }
+    });
   }
 
 }

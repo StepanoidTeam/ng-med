@@ -1,73 +1,78 @@
 <section>
   <md-card class="user-list-card ">
     <md-card-header>
-      <h1>Staff Details</h1>
+      <h1>General Info</h1>
     </md-card-header>
+
     <md-card-content>
 
-      <form>
-        <table class="example-full-width" cellspacing="0">
-          <tr>
-            <td>
-              <md-form-field>
-                <input mdInput placeholder="First Name">
-              </md-form-field>
-            </td>
-            <td>
-              <md-form-field>
-                <input mdInput placeholder="Last Name">
-              </md-form-field>
-            </td>
-            <td>
-              <md-form-field>
-                <input mdInput placeholder="Username">
-              </md-form-field>
-            </td>
-          </tr>
 
-          <tr>
-            <td>
-              <md-form-field>
-                <span mdPrefix>+1 &nbsp;</span>
-                <input type="tel" mdInput placeholder="Telephone">
-                <md-icon mdSuffix>local_phone</md-icon>
-              </md-form-field>
-            </td>
-            <td>
-              <md-form-field>
-                <input mdInput placeholder="E-Mail">
-                <md-icon mdSuffix>email</md-icon>
-              </md-form-field>
-            </td>
-            <td class="form-field">
-              <md-select placeholder="Role">
-                <md-option *ngFor="let item of roles" [value]="item">{{item}}</md-option>
-              </md-select>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <md-select placeholder="Branch">
-                <md-option *ngFor="let item of branches" [value]="item">{{item}}</md-option>
-              </md-select>
-            </td>
-            <td>
-              <md-select placeholder="Facility">
-                <md-option *ngFor="let item of facilities" [value]="item">{{item}}</md-option>
-              </md-select>
-            </td>
-          </tr>
+      <div class="flex-row">
+        <md-select placeholder="System">
+          <md-option *ngFor="let item of systems" [value]="item">{{item}}</md-option>
+        </md-select>
+        <span></span>
+        <span></span>
+      </div>
 
-        </table>
+      <div class="flex-row">
+        <md-form-field>
+          <input mdInput placeholder="Patient Id">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput [mdDatepicker]="picker" placeholder="Date of Birth">
+          <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+          <md-datepicker #picker></md-datepicker>
+        </md-form-field>
+        <md-radio-group class="flex-row">
+          <md-radio-button value="1">Male</md-radio-button>
+          <md-radio-button value="2">Female</md-radio-button>
+        </md-radio-group>
+      </div>
+      <div class="flex-row">
+        <md-form-field>
+          <input mdInput placeholder="First Name">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput placeholder="Last Name">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput placeholder="Middle Name">
+        </md-form-field>
+      </div>
+      <div class="flex-row">
+        <md-form-field>
+          <span mdPrefix>+1 &nbsp;</span>
+          <input type="tel" mdInput placeholder="Telephone">
+          <md-icon mdSuffix>local_phone</md-icon>
+        </md-form-field>
+        <md-form-field>
+          <input mdInput placeholder="E-Mail">
+          <md-icon mdSuffix>email</md-icon>
+        </md-form-field>
+        <md-select placeholder="Branch">
+          <md-option *ngFor="let item of branches" [value]="item">{{item}}</md-option>
+        </md-select>
+        <md-select placeholder="Facility">
+          <md-option *ngFor="let item of facilities" [value]="item">{{item}}</md-option>
+        </md-select>
+      </div>
 
-      </form>
+      <div class="flex-row" *ngIf="showHistory">
+        <md-chip-list>
+          <md-chip color="accent" selected="true">Last BP: 140 / 90</md-chip>
+          <md-chip>Last Heart Rate : 60 bpm</md-chip>
+          <md-chip color="warn" selected="true">Last Weight: 120 lb</md-chip>
+          <md-chip>Last Oxygen Level: 78%</md-chip>
+        </md-chip-list>
+      </div>
 
     </md-card-content>
     <md-card-actions>
       <span class="spacer"></span>
-      <button md-button routerLink="/users">Cancel</button>
-      <button md-button class="mat-raised-button mat-primary" routerLink="/users">
-        Save
+      <button md-button routerLink="/patients">Cancel</button>
+      <button md-button class="mat-raised-button mat-primary" [routerLink]="saveButton.link">
+        {{saveButton.label}}
       </button>
     </md-card-actions>
   </md-card>
