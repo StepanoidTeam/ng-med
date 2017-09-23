@@ -2,6 +2,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 import {
   MdButtonModule,
@@ -141,6 +142,7 @@ const appRoutes: Routes = [
     MdDatepickerModule,
     MdNativeDateModule,
     MdProgressBarModule,
+    Ng2GoogleChartsModule,
   ],
   entryComponents: [
     PatientFamilyMemberComponent

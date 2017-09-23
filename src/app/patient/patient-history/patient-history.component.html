@@ -1,3 +1,58 @@
-<p>
-  patient-history works!
-</p>
+<section class="flex-col">
+  <div class="flex-row">
+    <md-card class="user-list-card">
+      <md-card-header>
+        <h1>Blood Pressure</h1>
+      </md-card-header>
+
+      <md-card-content>
+        <google-chart [data]="lineChartData"></google-chart>
+      </md-card-content>
+      <md-card-actions>
+
+      </md-card-actions>
+    </md-card>
+    <md-card class="user-list-card">
+      <md-card-header>
+        <h1>Heart Rate</h1>
+      </md-card-header>
+
+      <md-card-content>
+        <google-chart [data]="lineChartData"></google-chart>
+      </md-card-content>
+      <md-card-actions>
+
+      </md-card-actions>
+    </md-card>
+  </div>
+
+  <div class="flex-row">
+    <md-card class="user-list-card">
+      <md-card-header>
+        <h1>Weight</h1>
+      </md-card-header>
+
+      <md-card-content>
+        <google-chart [data]="lineChartData"></google-chart>
+      </md-card-content>
+      <md-card-actions>
+
+      </md-card-actions>
+    </md-card>
+    <md-card class="user-list-card">
+      <md-card-header>
+        <h1>Oxygen Level</h1>
+      </md-card-header>
+
+      <md-card-content>
+        <google-chart [data]="lineChartData"></google-chart>
+      </md-card-content>
+      <md-card-actions>
+
+      </md-card-actions>
+    </md-card>
+  </div>
+</section>
+
+
+
