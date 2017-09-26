@@ -6,19 +6,29 @@
 
     <md-card-content>
 
-
       <div class="flex-row">
         <md-select placeholder="System">
           <md-option *ngFor="let item of systems" [value]="item">{{item}}</md-option>
         </md-select>
-        <span></span>
-        <span></span>
+        <md-form-field>
+          <input mdInput placeholder="Patient Id">
+        </md-form-field>
       </div>
 
       <div class="flex-row">
         <md-form-field>
-          <input mdInput placeholder="Patient Id">
+          <input mdInput placeholder="First Name">
         </md-form-field>
+        <md-form-field class="x05">
+          <input mdInput placeholder="Middle Name">
+        </md-form-field>
+        <md-form-field>
+          <input mdInput placeholder="Last Name">
+        </md-form-field>
+      </div>
+
+      <div class="flex-row">
+
         <md-form-field>
           <input mdInput [mdDatepicker]="picker" placeholder="Date of Birth">
           <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
@@ -29,17 +39,7 @@
           <md-radio-button value="2">Female</md-radio-button>
         </md-radio-group>
       </div>
-      <div class="flex-row">
-        <md-form-field>
-          <input mdInput placeholder="First Name">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Last Name">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Middle Name">
-        </md-form-field>
-      </div>
+
       <div class="flex-row">
         <md-form-field>
           <span mdPrefix>+1 &nbsp;</span>
@@ -50,6 +50,9 @@
           <input mdInput placeholder="E-Mail">
           <md-icon mdSuffix>email</md-icon>
         </md-form-field>
+      </div>
+
+      <div class="flex-row">
         <md-select placeholder="Branch">
           <md-option *ngFor="let item of branches" [value]="item">{{item}}</md-option>
         </md-select>

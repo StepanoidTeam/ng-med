@@ -43,15 +43,27 @@ md-cell {
   align-items: baseline;
 }
 
+.flex-row .mat-form-field{
+  width: initial;
+}
+
 .flex-row > * {
-  /*flex: 1 1 auto;*/
-  flex: 1 1 200px;
+  flex: 1 1 100px;
   padding: 10px;
 }
 
 .flex-row > .x2{
-  flex: 2 2 400px;
+  flex: 2 2 100px;
 }
+
+.flex-row > .x3{
+  flex: 3 3 100px;
+}
+
+.flex-row > .x05{
+  flex: 0.5 0.5 100px;
+}
+
 
 .flex-col{
   display: flex;
