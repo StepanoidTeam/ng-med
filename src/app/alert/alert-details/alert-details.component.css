@@ -8,10 +8,6 @@ md-card {
     width: 600px;
 }
 
-md-card-actions {
-    display: flex;
-}
-
 md-form-field {
     width: 100%;
 }

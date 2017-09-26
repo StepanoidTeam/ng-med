@@ -16,11 +16,16 @@ h1 {
 }
 
 md-card {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+
   margin: 16px;
 }
 
 md-card > md-card-actions {
   display: flex !important;
+  padding-bottom: 4px !important;
 }
 
 md-cell {
