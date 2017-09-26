@@ -86,7 +86,7 @@ const appRoutes: Routes = [
 
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
   {path: '**', component: NotFoundComponent},

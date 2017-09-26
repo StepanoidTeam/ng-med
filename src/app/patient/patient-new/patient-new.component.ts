@@ -16,10 +16,6 @@ export class PatientNewComponent implements OnInit {
     {
       label: 'General Info',
       link: 'general',
-    },
-    {
-      label: 'Family',
-      link: 'family',
     }];
 
   constructor() { }
