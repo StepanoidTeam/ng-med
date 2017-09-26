@@ -6,6 +6,12 @@ body {
   height: 100vh;
 }
 
+.content-center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -48,7 +54,7 @@ md-cell {
   align-items: baseline;
 }
 
-.flex-row .mat-form-field{
+.flex-row .mat-form-field {
   width: initial;
 }
 
@@ -57,20 +63,19 @@ md-cell {
   padding: 10px;
 }
 
-.flex-row > .x2{
+.flex-row > .x2 {
   flex: 2 2 100px;
 }
 
-.flex-row > .x3{
+.flex-row > .x3 {
   flex: 3 3 100px;
 }
 
-.flex-row > .x05{
+.flex-row > .x05 {
   flex: 0.5 0.5 100px;
 }
 
-
-.flex-col{
+.flex-col {
   display: flex;
   flex-direction: column;
 }
@@ -78,4 +83,9 @@ md-cell {
 .col-6 {
   flex: 1 1 auto;
   padding: 10px;
+}
+
+.auth-card {
+  width: 400px;
+  height: 300px;
 }
