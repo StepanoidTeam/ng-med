@@ -2,19 +2,22 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import {Ng2GoogleChartsModule} from 'ng2-google-charts';
 
 import {
   MdButtonModule,
   MdCardModule,
   MdCheckboxModule,
-  MdChipsModule, MdDatepickerModule,
+  MdChipsModule,
+  MdDatepickerModule,
   MdFormFieldModule,
   MdGridListModule,
   MdIconModule,
   MdInputModule,
-  MdListModule, MdNativeDateModule,
-  MdPaginatorModule, MdProgressBarModule,
+  MdListModule,
+  MdNativeDateModule,
+  MdPaginatorModule,
+  MdProgressBarModule,
   MdRadioModule,
   MdSelectModule,
   MdSidenavModule,
@@ -42,7 +45,8 @@ import {PatientHistoryComponent} from './patient/patient-history/patient-history
 import {PatientGeneralComponent} from './patient/patient-general/patient-general.component';
 import {PatientNewComponent} from './patient/patient-new/patient-new.component';
 import {PatientEditComponent} from './patient/patient-edit/patient-edit.component';
-import { PatientFamilyMemberComponent } from './patient/patient-family-member/patient-family-member.component';
+import {PatientFamilyMemberComponent} from './patient/patient-family-member/patient-family-member.component';
+import {AuthComponent} from './auth/auth.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: PatientListComponent},
@@ -54,7 +58,7 @@ const appRoutes: Routes = [
   {path: 'patients', component: PatientListComponent},
   {
     path: 'patients/new', component: PatientNewComponent,
-    data: { mode: 'new' },
+    data: {mode: 'new'},
     children: [
       {path: 'general', component: PatientGeneralComponent},
       {path: 'family', component: PatientFamilyComponent},
@@ -63,7 +67,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'patients/:id', component: PatientEditComponent,
-    data: { mode: 'edit' },
+    data: {mode: 'edit'},
     children: [
       {path: 'general', component: PatientGeneralComponent},
       {path: 'history', component: PatientHistoryComponent},
@@ -80,13 +84,18 @@ const appRoutes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'settings', component: UnderConstructionComponent},
 
-  {path: 'login', component: LoginComponent},
-  {path: 'password/reset', component: PasswordResetComponent},
-  {path: 'password/change', component: PasswordChangeComponent},
 
   {
+    path: 'auth', component: AuthComponent,
+    children: [
+      {path: 'login', component: LoginComponent},
+      {path: 'password/reset', component: PasswordResetComponent},
+      {path: 'password/change', component: PasswordChangeComponent},
+    ]
+  },
+  {
     path: '',
-    redirectTo: '/login',
+    redirectTo: 'auth/login',
     pathMatch: 'full',
   },
   {path: '**', component: NotFoundComponent},
@@ -113,6 +122,7 @@ const appRoutes: Routes = [
     PatientNewComponent,
     PatientEditComponent,
     PatientFamilyMemberComponent,
+    AuthComponent,
   ],
   imports: [
     RouterModule.forRoot(
