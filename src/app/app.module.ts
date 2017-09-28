@@ -47,42 +47,59 @@ import {PatientNewComponent} from './patient/patient-new/patient-new.component';
 import {PatientEditComponent} from './patient/patient-edit/patient-edit.component';
 import {PatientFamilyMemberComponent} from './patient/patient-family-member/patient-family-member.component';
 import {AuthComponent} from './auth/auth.component';
+import { MasterComponent } from './master/master.component';
 
 const appRoutes: Routes = [
-  {path: 'dashboard', component: PatientListComponent},
-
-  {path: 'users', component: UserListComponent},
-  {path: 'users/new', component: UserDetailsComponent},
-  {path: 'users/:id', component: UserDetailsComponent},
-
-  {path: 'patients', component: PatientListComponent},
   {
-    path: 'patients/new', component: PatientNewComponent,
-    data: {mode: 'new'},
+    path: '', component: MasterComponent,
     children: [
-      {path: 'general', component: PatientGeneralComponent},
-      {path: 'family', component: PatientFamilyComponent},
-      {path: '', redirectTo: 'general', pathMatch: 'full'},
+      {path: 'dashboard', component: PatientListComponent},
+
+      {path: 'users', component: UserListComponent},
+      {path: 'users/new', component: UserDetailsComponent},
+      {path: 'users/:id', component: UserDetailsComponent},
+
+      {path: 'patients', component: PatientListComponent},
+      {
+        path: 'patients/new', component: PatientNewComponent,
+        data: {mode: 'new'},
+        children: [
+          {path: 'general', component: PatientGeneralComponent},
+          {path: 'family', component: PatientFamilyComponent},
+          {path: '', redirectTo: 'general', pathMatch: 'full'},
+        ]
+      },
+      {
+        path: 'patients/:id', component: PatientEditComponent,
+        data: {mode: 'edit'},
+        children: [
+          {path: 'general', component: PatientGeneralComponent},
+          {path: 'history', component: PatientHistoryComponent},
+          {path: 'pendant', component: PatientPendantComponent},
+          {path: 'family', component: PatientFamilyComponent},
+          {path: '', redirectTo: 'general', pathMatch: 'full'},
+        ]
+      },
+
+      {path: 'alerts', component: AlertSettingsComponent},
+      {path: 'alerts/new', component: AlertDetailsComponent},
+      {path: 'alerts/:id', component: AlertDetailsComponent},
+
+      {path: 'profile', component: ProfileComponent},
+      {path: 'settings', component: UnderConstructionComponent},
+
+      {
+        path: '',
+        redirectTo: 'auth/login',
+        pathMatch: 'full',
+      },
+      {
+        path: '**',
+        redirectTo: 'auth/login',
+        pathMatch: 'full',
+      },
     ]
   },
-  {
-    path: 'patients/:id', component: PatientEditComponent,
-    data: {mode: 'edit'},
-    children: [
-      {path: 'general', component: PatientGeneralComponent},
-      {path: 'history', component: PatientHistoryComponent},
-      {path: 'pendant', component: PatientPendantComponent},
-      {path: 'family', component: PatientFamilyComponent},
-      {path: '', redirectTo: 'general', pathMatch: 'full'},
-    ]
-  },
-
-  {path: 'alerts', component: AlertSettingsComponent},
-  {path: 'alerts/new', component: AlertDetailsComponent},
-  {path: 'alerts/:id', component: AlertDetailsComponent},
-
-  {path: 'profile', component: ProfileComponent},
-  {path: 'settings', component: UnderConstructionComponent},
 
 
   {
@@ -93,6 +110,8 @@ const appRoutes: Routes = [
       {path: 'password/change', component: PasswordChangeComponent},
     ]
   },
+
+
   {
     path: '',
     redirectTo: 'auth/login',
@@ -123,6 +142,7 @@ const appRoutes: Routes = [
     PatientEditComponent,
     PatientFamilyMemberComponent,
     AuthComponent,
+    MasterComponent,
   ],
   imports: [
     RouterModule.forRoot(

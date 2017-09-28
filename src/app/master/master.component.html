@@ -1,0 +1,62 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<md-toolbar color="primary">
+  <button type="button" md-icon-button (click)="sidenav.toggle()">
+    <md-icon class="md-24 mat-icon material-icons">menu</md-icon>
+  </button>
+  <span>Med App</span>
+  <span class="spacer"></span>
+  <md-icon class="example-icon">user</md-icon>
+
+
+  <button md-button routerLink="/profile">
+    <md-icon  class="md-24 mat-icon material-icons">account_circle</md-icon>
+    John Doe
+  </button>
+
+  <button md-button routerLink="/auth/login">
+    <md-icon  class="md-24 mat-icon material-icons">exit_to_app</md-icon>
+    Logout
+  </button>
+
+  <!--<button type="button" md-icon-button>
+    <md-icon class="md-24 mat-icon material-icons">settings</md-icon>
+  </button>-->
+</md-toolbar>
+
+
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+
+    <md-nav-list>
+      <md-list-item routerLink="/dashboard" routerLinkActive="active">
+        <md-icon mdListIcon>dashboard</md-icon>
+        Dashboard
+      </md-list-item>
+      <md-list-item routerLink="/alerts" routerLinkActive="active">
+        <md-icon mdListIcon>add_alert</md-icon>
+        Alert Settings
+      </md-list-item>
+      <md-list-item routerLink="/users" routerLinkActive="active">
+        <md-icon mdListIcon>face</md-icon>
+        Staff
+      </md-list-item>
+      <!--<md-list-item routerLink="/patients" routerLinkActive="active">
+        <md-icon mdListIcon>assignment_ind</md-icon>
+        Patients
+      </md-list-item>-->
+      <md-list-item routerLink="/profile" routerLinkActive="active">
+        <md-icon mdListIcon>account_circle</md-icon>
+        Profile
+      </md-list-item>
+      <!--<md-list-item routerLink="/settings" routerLinkActive="active">
+        <md-icon mdListIcon>settings</md-icon>
+        Settings
+      </md-list-item>-->
+    </md-nav-list>
+
+  </md-sidenav>
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-container>
+
